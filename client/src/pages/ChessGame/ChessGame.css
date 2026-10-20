@@ -1,0 +1,13 @@
+.chess-game {
+  margin-top: 1.5rem;
+  display: grid;
+  place-content: center;
+  grid-template-columns: min-content 500px;
+  grid-template-rows: 800px;
+  column-gap: 2rem;
+  row-gap: 40px;
+}
+
+.chessboard-wrapper {
+  position: relative;
+}
