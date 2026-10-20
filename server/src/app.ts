@@ -45,16 +45,25 @@ class App {
       set('debug', true);
     }
 
-    connect(dbConnection.url, error => {
-      if (!error) console.log('Connected to database');
-      else console.log(error);
-    });
+    // Modern Mongoose versions do not accept a callback function in connect()
+    // Using a standard Promise chain prevents connection deprecation crashes
+    connect(dbConnection.url)
+      .then(() => console.log('Connected to database successfully'))
+      .catch((error) => console.error('Database connection error:', error));
   }
-  cd;
 
   private initializeMiddlewares() {
-    this.app.use(morgan(LOG_FORMAT));
-    this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
+    // Morgan logger setup
+    if (LOG_FORMAT) {
+      this.app.use(morgan(LOG_FORMAT));
+    }
+
+    // CORS configuration with safety fallbacks for local running
+    this.app.use(cors({ 
+      origin: ORIGIN || 'http://localhost:5173', 
+      credentials: CREDENTIALS === true 
+    }));
+    
     this.app.use(hpp());
     this.app.use(helmet());
     this.app.use(compression());

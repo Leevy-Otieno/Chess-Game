@@ -2,6 +2,7 @@
   "name": "chess-game",
   "private": true,
   "version": "0.0.0",
+  "author": "Leevy Otieno",
   "type": "module",
   "scripts": {
     "dev": "vite",

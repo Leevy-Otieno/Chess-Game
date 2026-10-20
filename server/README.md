@@ -2,11 +2,9 @@
 ### Chess Game Server
 This is the server-side code for the Chess Game web application. It is built using Node.js and Express.js and MongoDB.
 
-### Documentation
-The documentation for the server can be found [here](https://documenter.getpostman.com/view/16239037/2s9YJjRJmU).
 
-### Postman Collection
-The Postman collection for the server can be found [here](https://www.postman.com/material-geologist-22258806/workspace/chess-game-api/collection/16239037-fe200a86-c35e-469d-b487-4eb1e467954b?action=share&creator=16239037).
+
+
 
 ### How to run the server
 1. Install the dependencies using `npm install`
