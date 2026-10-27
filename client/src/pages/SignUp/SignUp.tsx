@@ -43,6 +43,7 @@ const SignUp = () => {
       navigate("/login");
     }
   };
+  
   return (
     <div className="sign-up-page">
       <form onSubmit={(e) => handleSignUp(e)} className="sign-up-form">
